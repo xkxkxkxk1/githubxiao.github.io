@@ -1,0 +1,9 @@
+jdk的安装和eclipse使用:
+1:jdk的配置环境变量
+在系统变量中新建变量名：JAVA_HOME,变量值：C:\Program Files\Java\jdk1.7.0_60
+在系统变量中查找 Path 编辑%JAVA_HOME%\bin;
+在系统变量中新建变量名：CLASSPATH 变量值:(.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;)
+(ps:前面有个  .;  这个是告诉JDK，搜索CLASS时先查找当前目录的CLASS文件 )
+
+2.eclipse的ini配置文件需要更改JDK路径
+3 git的安装和使用  git和tortoise(和电脑版本对应),使用时用ssh秘钥方式$ ssh-keygen -t rsa -C "your_email@youremail.com",秘钥放在用户下的文件夹.ssh中,得到秘钥以后git clone,之后fletch刷新版本,swtich调整版本,show log显示修改日志,pull更新到当前版本.需要给当地仓库和字库文件关联,配置了一波字库ssh的URL,fork的目的是为了将顶级库文件放入字库,便于关联.
