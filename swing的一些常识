@@ -1,0 +1,60 @@
+1.JFrame框架窗体  JLabel 标签   Container 容器    JDialog窗体
+JFrame jf = new JFrame(title);  //框架的构造方法 
+ JLabel jl = new JLabel("http://www.cnblogs.com/adamjwh/");//标签构造方法  可以显示一行只读文本、一个图像或带图像的文本。
+Container container = JFrame.getContentPane();    //容器构造方法   container.add往容器添加对象.  container.setLayout(参数) 容器布局
+JDialog(super(new JFrame(), "这是一个JDialog窗体", true); )//父窗口参数,指定父窗口
+addActionListener( ActionListener的子类) //添加监听
+
+2.布局
+setBounds()方法中，前两个参数是位置的xy坐标，后两个参数是按钮的长和宽。
+使用FlowLayout类，像“流”一样从左到右摆放组件，直到占据了这一行的所有空间，再向下移动一行。组件在每一行的位置默认居中排列，要更改位置可自行设置。
+        // 设置流布局管理器后两个参数分别为组件间的水平间隔和垂直间隔
+       container.setLayout(new FlowLayout(2, 10, 10)); //第一个参数是对齐方式
+Swing组件默认的布局管理器是边界布局管理器，使用的是BorderLayout类。
+
+    private String[] border = {BorderLayout.CENTER, BorderLayout.NORTH, 
+            BorderLayout.SOUTH, BorderLayout.WEST, BorderLayout.EAST};    // 此数组用于存放组件摆放位置
+    private String[] button = {"中", "北", "南", "西", "东"};    // 此数组用于存放按钮名称
+        public BorderLayoutDemo() {
+        Container container = this.getContentPane();
+        this.setLayout(new BorderLayout());        // 设置容器为边界布局管理器
+        
+        // 循环添加按钮
+        for(int i=0; i<button.length ; i++) {
+            container.add(border[i], new JButton(button[i]));    // 左参数为设置布局，右参数为创建按钮
+        }
+        
+        this.setVisible(true);
+        this.setSize(300, 200);
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+    }
+网格布局管理器将容器划分为网格，组件按行按列排列，使用GridLayout类。在此布局管理器中，
+每个组件的大小都相同，且会填满整个网格，改变窗体大小，组件也会随之改变。
+
+3.面板JPanel  滚动面板JScrollPane
+ JPanel p1 = new JPanel(new GridLayout(1, 3));  
+ 
+4.按钮组件
+提交按钮组件（JButton）
+JButton jb = new JButton();
+jb.setIcon(icon);        // 设置图标
+jb.setToolTipText("图片按钮");        // 设置按钮提示
+单选按钮组件（JRadioButton）
+JRadioButton jr1 = new JRadioButton();
+JRadioButton jr1 = new JRadioButton();
+JRadioButton jr1 = new JRadioButton();
+ButtonGroup group = new ButtonGroup();
+group.add(jr1);
+group.add(jr2);
+group.add(jr3);
+复选框组件（JCheckBox）
+JCheckBox jrb  = new JCheckBox();
+下拉列表（JComboBox）
+JComboBox status = new JComboBox();
+status.addItem(null);
+status.addItem("正在上映");
+status.addItem("即将上映");
+status.addItem("下架");
+列表框（JList）
+String[] contents = {"1", "2", "3"};
+JList jl = new JList(contents);
